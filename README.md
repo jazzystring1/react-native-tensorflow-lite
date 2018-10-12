@@ -1,6 +1,8 @@
 
 # react-native-tensorflow-lite
 
+A react native library for running Tensorflow Lite Image Recognition on Android app.
+
 ## Installing
 
 `$ npm install react-native-tensorflow-lite --save`
