@@ -1,0 +1,20 @@
+{
+  "name": "react-native-tensorflow-lite",
+  "version": "1.0.5",
+  "description": "A react native library for running Tensorflow Lite on Android",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "tensorflow lite",
+    "tensorflow"
+  ],
+  "author": "",
+  "license": "",
+  "peerDependencies": {
+    "react-native": "^0.41.2",
+    "react-native-windows": "0.41.0-rc.1"
+  }
+}
