@@ -18,7 +18,7 @@ A react native library for running Tensorflow Lite Image Recognition on Android 
 
 #### Android
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
+  - Open up `android/app/src/main/java/[...]/MainActivity.java`
   - Add `import com.reactlibrary.RNTensorflowLitePackage;` to the imports at the top of the file
   - Add `new RNTensorflowLitePackage()` to the list returned by the `getPackages()` method
   - Add the following lines to your app's build.gradle(`android/app/build.gradle`):
@@ -105,4 +105,4 @@ class MyImageClassifier extends Component {
 ### Things to note
 
 - Sometimes, when using the float model the tensorflow lite inference is slower than using the ordinary tensorflow mobile as discussed in this issue https://github.com/tensorflow/tensorflow/issues/21787
-- 
+
