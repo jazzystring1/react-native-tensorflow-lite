@@ -16,7 +16,7 @@ A react native library for running Tensorflow Lite Image Recognition on Android 
 
 `Follow this guide: https://www.tensorflow.org/lite/convert/cmdline_examples`
 
-#### Android
+### Android
 
   - Open up `android/app/src/main/java/[...]/MainActivity.java`
   - Add `import com.reactlibrary.RNTensorflowLitePackage;` to the imports at the top of the file
