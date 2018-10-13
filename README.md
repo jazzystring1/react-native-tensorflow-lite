@@ -3,6 +3,7 @@
 
 A react native library for running Tensorflow Lite Image Recognition on Android app.
 
+
 ## Installing
 
 `$ npm install react-native-tensorflow-lite --save`
@@ -10,6 +11,10 @@ A react native library for running Tensorflow Lite Image Recognition on Android 
 ### Linking
 
 `$ react-native link react-native-tensorflow-lite`
+
+### Converting your model to tflite format
+
+`Follow this guide: https://www.tensorflow.org/lite/convert/cmdline_examples`
 
 #### Android
 
@@ -39,8 +44,8 @@ class MyImageClassifier extends Component {
     this.state = {}
 
     try {
-	  // Initialize Tensorflow Lite Image Recognizer
-      this.classifier = new TFLiteImageRecognition({
+	// Initialize Tensorflow Lite Image Recognizer
+        this.classifier = new TFLiteImageRecognition({
         model: "mymodel.tflite",  // Your tflite model in assets folder.
         labels: "label.txt" // Your label file
       })
@@ -62,10 +67,10 @@ class MyImageClassifier extends Component {
       })
 
       const resultObj = {
-				name: "Name: " + results[0].name,  
-				confidence: "Confidence: " + results[0].confidence, 
-				inference: "Inference: " + results[0].inference + "ms"
-			};
+	name: "Name: " + results[0].name,  
+	confidence: "Confidence: " + results[0].confidence, 
+	inference: "Inference: " + results[0].inference + "ms"
+      };
       this.setState(resultObj)
 		
     } catch(err) {
@@ -96,4 +101,8 @@ class MyImageClassifier extends Component {
   }
 }
 ```
-  
+
+### Things to note
+
+- Sometimes, when using the float model the tensorflow lite inference is slower than using the ordinary tensorflow mobile as discussed in this issue https://github.com/tensorflow/tensorflow/issues/21787
+- 
