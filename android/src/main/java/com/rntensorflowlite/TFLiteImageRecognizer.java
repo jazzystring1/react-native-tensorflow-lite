@@ -33,7 +33,7 @@ public class TFLiteImageRecognizer implements Classifier {
     private static final int MAX_RESULTS = 3;
     private static final int BATCH_SIZE = 1;
     private static final int PIXEL_SIZE = 3;
-    private static final float THRESHOLD = 0.1 f;
+    private static final float THRESHOLD = 0.1f;
 
     long initialTime;
     long finalTime;
@@ -128,9 +128,9 @@ public class TFLiteImageRecognizer implements Classifier {
         for (int i = 0; i < this.inputShape; ++i) {
             for (int j = 0; j < this.inputShape; ++j) {
                 final int val = intValues[pixel++];
-                byteBuffer.putFloat(((val >> 16) & 0xFF) / 255.0 f);
-                byteBuffer.putFloat(((val >> 8) & 0xFF) / 255.0 f);
-                byteBuffer.putFloat((val & 0xFF) / 255.0 f);
+                byteBuffer.putFloat(((val >> 16) & 0xFF) / 255.0f);
+                byteBuffer.putFloat(((val >> 8) & 0xFF) / 255.0f);
+                byteBuffer.putFloat((val & 0xFF) / 255.0f);
             }
         }
         return byteBuffer;
