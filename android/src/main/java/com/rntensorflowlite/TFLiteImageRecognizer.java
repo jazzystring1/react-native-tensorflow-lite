@@ -40,7 +40,7 @@ public class TFLiteImageRecognizer implements Classifier {
 
     private Interpreter classifier;
     private int inputShape;
-    private List < String > labelList;
+    private List <String> labelList;
 
 
     public TFLiteImageRecognizer() {}
@@ -138,8 +138,8 @@ public class TFLiteImageRecognizer implements Classifier {
     }
 
 
-    private List < String > loadLabelList(AssetManager assetManager, String labelPath) throws IOException {
-        List < String > labelList = new ArrayList < > ();
+    private List <String> loadLabelList(AssetManager assetManager, String labelPath) throws IOException {
+        List <String> labelList = new ArrayList<> ();
         BufferedReader reader = new BufferedReader(new InputStreamReader(assetManager.open(labelPath)));
         String line;
         while ((line = reader.readLine()) != null) {
@@ -152,7 +152,7 @@ public class TFLiteImageRecognizer implements Classifier {
     @SuppressLint("DefaultLocale")
     private WritableArray getSortedResult(float[][] labelProbArray) {
 
-        List < WritableMap > results = new ArrayList < > ();
+        List <WritableMap> results = new ArrayList <> ();
 
         for (int i = 0; i < labelList.size(); ++i) {
             float confidence = (labelProbArray[0][i] * 100) / 127.0 f;
@@ -166,7 +166,7 @@ public class TFLiteImageRecognizer implements Classifier {
             }
         }
 
-        Collections.sort(results, new Comparator < ReadableMap > () {
+        Collections.sort(results, new Comparator <ReadableMap> () {
             @Override
             public int compare(ReadableMap first, ReadableMap second) {
                 return Double.compare(second.getDouble("confidence"), first.getDouble("confidence"));
